@@ -9,71 +9,73 @@ ogni Studente può iscriversi a più appelli di Esame;
 per ogni appello d’Esame a cui lo Studente ha partecipato, è necessario memorizzare il voto ottenuto, anche se non sufficiente. Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi di stabilirne le relazioni. Infine, andiamo a definire le colonne e i tipi di dato di ogni tabella.
 Utilizzare https://www.diagrams.net/ per la creazione dello schema. Esportare quindi il diagramma in jpg e caricarlo nella repo.
 
+
+
 # Tabella Dipartimenti
-Id
-Nome
-Indirizzo
-Email
-Telefono
-Responsabile del dipartimento
-Numero corsi di laurea
+Id: INT (chiave primaria)
+Nome: VARCHAR
+Indirizzo: VARCHAR
+Email: VARCHAR
+Telefono: VARCHAR
+Responsabile del dipartimento: VARCHAR
+Numero corsi di laurea: INT
 
 
 # Tabella Corsi di Laurea
-Id
-Nome
-Numero corsi
-Codice corso di laurea
-Tipo
-Pre-requisiti
-Responsabile del corso di laurea
-Durata
+Id: INT (chiave primaria)
+Nome: VARCHAR
+Numero corsi: INT
+Codice corso di laurea: VARCHAR
+Tipo: VARCHAR
+Pre-requisiti: VARCHAR
+Responsabile del corso di laurea: VARCHAR
+Durata: VARCHAR
 
 
 # Tabella Corsi
-Id
-Nome
-Esami
-Crediti
-Docenti
-Durata
-Studenti
-Descrizione del corso
-Lingua
+Id: INT (chiave primaria)
+Nome: VARCHAR
+Esami: VARCHAR
+Crediti: INT
+Docenti: VARCHAR
+Durata: VARCHAR
+Studenti: VARCHAR
+Descrizione del corso: TEXT
+Lingua: VARCHAR
 
 # Tabella Insegnanti
-Id
-Nome
-Cognome
-Anno di nascita
-Email
-Sito web
-Foto
-Materia insegnata
+Id: INT (chiave primaria)
+Nome: VARCHAR
+Cognome: VARCHAR
+Anno di nascita: DATE
+Email: VARCHAR
+Sito web: VARCHAR
+Foto: VARCHAR(255)
+Materia insegnata: VARCHAR
 
 
 # Tabella Esami
-Id
-Nome
-Tipo
-Codice
-Data
-Aula
-Durata
-obbligatorio
-Crediti
+Id: INT (chiave primaria)
+Nome: VARCHAR
+Tipo: VARCHAR
+Codice: VARCHAR
+Data: DATETIME
+Aula: VARCHAR
+Durata: TIME
+Obbligatorio: TINYINT
+Crediti: INT
 
-# Table Studenti
-Id
-Nome
-Cognome
-Matricola
-Anno di nascita
-Email
-Media voti
-Fascia reddituale
-Tipologia Studente
-Data immatricolazione
+# Tabella Studenti
+Id: INT (chiave primaria)
+Nome: VARCHAR
+Cognome: VARCHAR
+Matricola: VARCHAR
+Anno di nascita: DATE
+Email: VARCHAR
+Media voti: FLOAT
+Fascia reddituale: VARCHAR
+Tipologia Studente: VARCHAR
+Data immatricolazione: DATETIME
 
 # Relazioni
 -Dipartimenti <OneToMany> Corsi di Laurea
