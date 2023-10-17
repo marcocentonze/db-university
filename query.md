@@ -8,7 +8,7 @@ WHERE YEAR(date_of_birth) = 1990;
 
 SELECT *
 FROM `courses`
-WHERE `credit` > 10;
+WHERE `cfu` > 10;
 
 
 # 3. Selezionare tutti gli studenti che hanno più di 30 anni
@@ -46,4 +46,4 @@ SELECT COUNT(`id`)
 
 # 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 
-SELECT * FROM `teachers` WHERE `phone` IS NULL;
+SELECT * FROM `teachers` WHERE `phone` IS NOT NULL;
